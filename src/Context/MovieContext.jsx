@@ -53,7 +53,7 @@ const MovieProvider = ({ children }) => {
   const [loading, setLoading] = useState(false);
   const [selectedGenre, setSelectedGenre] = useState("All");
 
-  const API_URL = "http://www.omdbapi.com/?";
+  const API_URL = "https://www.omdbapi.com/?";
 
   const fetchMovieDetails = async (movie) => {
     try {
