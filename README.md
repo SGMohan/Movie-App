@@ -1,12 +1,58 @@
-# React + Vite
+# 🎬 MovieLand - Movie Browsing Web App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**MovieLand** is a sleek, modern movie browsing application built with **React** and **Context API**. Users can explore trending movies, view detailed info, and switch between dark and light themes. Powered by a smooth UI and state management, it offers a fun and engaging movie discovery experience.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- **Trending Movies**: Browse the most popular and trending movies.
+- **Movie Details**: View descriptions, ratings, release dates, and more.
+- **Theme Toggle**: Seamlessly switch between dark and light mode.
+- **Loading Indicator**: Spinner during API fetch for better UX.
+- **Responsive Design**: Works perfectly on mobile, tablet, and desktop.
+- **Context API**: Global state management for movies and theme.
+- **Modular Components**: Clean and reusable component structure.
 
-If you are developing a production application, we recommend using TypeScript and enable type-aware lint rules. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Technologies Used
+
+- **Frontend**: React, CSS (or Tailwind CSS if used)
+- **Routing**: React Router DOM
+- **State Management**: Context API, React Hooks (`useState`, `useEffect`, `useContext`)
+- **Icons**: (optional) React Icons
+- **API**: OMDB API (or your movie data)
+
+---
+
+## 📦 Install Dependencies
+
+
+- npm install
+- npm install axios
+- npm install react-router-dom
+- npm install react-icons # If icons are used.
+
+---
+
+## 📁 Folder Structure
+movieapp/
+├── src/
+│   ├── Components/
+│   │   ├── Common/
+│   │   │   ├── AppHeader.jsx
+│   │   │   └── AppFooter.jsx
+│   │   ├── Movies/
+│   │   │   ├── MovieList.jsx
+│   │   │   └── MovieDetails.jsx
+│   │   ├── Home.jsx
+│   │   └── Loading.jsx
+│   ├── Context/
+│   │   ├── MovieContext.jsx
+│   │   └── ThemeContext.jsx
+│   ├── App.jsx
+│   └── main.jsx
+├── public/
+├── package.json
+└── README.md
