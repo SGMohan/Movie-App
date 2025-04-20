@@ -65,31 +65,13 @@ const featuredMovies = [
 // Trending movies data
 const trendingMovies = [
   {
-    id: "tt15398776",
-    title: "Oppenheimer",
-    year: "2023",
+    id: "tt30387552",
+    title: "Amaran",
+    year: "2024",
     poster:
-      "https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_SX300.jpg",
-    genre: "Biography, Drama, History",
-    rating: 8.5,
-  },
-  {
-    id: "tt9362722",
-    title: "Spider-Man: Across the Spider-Verse",
-    year: "2023",
-    poster:
-      "https://m.media-amazon.com/images/M/MV5BMzI0NmVkMjEtYmY4MS00ZDMxLTlkZmEtMzU4MDQxYTMzMjU2XkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_SX300.jpg",
-    genre: "Animation, Action, Adventure",
-    rating: 8.7,
-  },
-  {
-    id: "tt1517268",
-    title: "Barbie",
-    year: "2023",
-    poster:
-      "https://m.media-amazon.com/images/M/MV5BNjU3N2QxNzYtMjk1NC00MTc4LTk1NTQtMmUxNTljM2I0NDA5XkEyXkFqcGdeQXVyODE5NzE3OTE@._V1_SX300.jpg",
-    genre: "Adventure, Comedy, Fantasy",
-    rating: 7.0,
+      "https://m.media-amazon.com/images/M/MV5BNTAzMGQ2MGItMjk5OC00YWIwLThmMjUtYmNjMTIxNzVlZWQ4XkEyXkFqcGc@._V1_SX300.jpg",
+    genre: "Action, Drama",
+    rating: 8.1,
   },
   {
     id: "tt6718170",
@@ -109,7 +91,37 @@ const trendingMovies = [
     genre: "Action, Crime, Thriller",
     rating: 7.8,
   },
+  {
+    id: "tt12844910",
+    title: "Pathaan",
+    year: "2023",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BNDdkNTY1MDQtY2I5MC00OTFlLTg5OWQtZWE2YzE5NWFiMDgzXkEyXkFqcGc@._V1_SX300.jpg",
+    genre: "Action, Thriller",
+    rating: 5.9,
+  },
+  {
+    id: "tt1375666",
+    title: "Inception",
+    year: "2010",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg",
+    genre: "Action, Adventure, Sci-Fi",
+    rating: 8.8,
+  },
+  {
+    id: "tt26233598",
+    title: "Raayan",
+    year: "2024",
+    poster:
+      "https://m.media-amazon.com/images/M/MV5BYzdmNzBjMDgtMmJkNC00ZjU3LTgxZTctY2QyOTkxMTFhOTU5XkEyXkFqcGc@._V1_SX300.jpg",
+    genre: "Action, Drama",
+    rating: 6.5,
+  },
 ];
+
+
+
 
 const Home = () => {
   const navigate = useNavigate();
@@ -189,13 +201,13 @@ const Home = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevFeatured}
-          className="absolute  hover:cursor-pointer left-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
+          className="absolute hover:cursor-pointer left-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
         >
           <FiChevronLeft size={24} />
         </button>
         <button
           onClick={nextFeatured}
-          className="absolute  hover:cursor-pointer right-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
+          className="absolute hover:cursor-pointer right-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
         >
           <FiChevronRight size={24} />
         </button>
@@ -320,13 +332,13 @@ const Home = () => {
             </p>
           </div>
 
-          {/* Movie Posters Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6">
+          {/* Movie Posters Grid - Modified for small screens */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
             {trendingMovies.map((movie) => (
               <div
                 key={movie.id}
                 onClick={() => handleMovieClick(movie.id)}
-                className="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
+                className="group relative overflow-hidden rounded-lg sm:rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 cursor-pointer"
               >
                 {/* Movie Poster with fallback */}
                 <div className="aspect-[2/3] w-full overflow-hidden bg-gray-200">
@@ -341,28 +353,31 @@ const Home = () => {
                   />
                 </div>
 
-                {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                {/* Gradient Overlay - Always visible on mobile, shown on hover for larger screens */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent sm:opacity-0 group-hover:sm:opacity-100 transition-opacity duration-300" />
 
-                {/* Movie Info (shown on hover) */}
-                <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
-                  <h3 className="text-white font-bold text-lg">
+                {/* Movie Info - Always visible on mobile, shown on hover for larger screens */}
+                <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 sm:translate-y-10 group-hover:sm:translate-y-0 transition-transform duration-300">
+                  <h3 className="text-white font-bold text-sm sm:text-lg">
                     {movie.title}
                   </h3>
                   <div className="flex justify-between items-center mt-1">
-                    <span className="text-gray-300 text-sm">{movie.year}</span>
-                    <span className="text-yellow-400 text-sm flex items-center">
+                    <span className="text-gray-300 text-xs sm:text-sm">
+                      {movie.year}
+                    </span>
+                    <span className="text-yellow-400 text-xs sm:text-sm flex items-center">
                       <FiStar className="mr-1" /> {movie.rating}
                     </span>
                   </div>
-                  <div className="mt-2 flex flex-wrap gap-1">
+                  {/* Genre - Always visible on mobile */}
+                  <div className="mt-1 sm:mt-2 flex flex-wrap gap-1">
                     {movie.genre
                       .split(", ")
                       .slice(0, 2)
                       .map((genre, i) => (
                         <span
                           key={i}
-                          className="text-xs bg-red-600/80 text-white px-2 py-1 rounded-full"
+                          className="text-xs bg-red-600/80 text-white px-1.5 py-0.5 sm:px-2 sm:py-1 rounded-full"
                         >
                           {genre}
                         </span>
