@@ -65,7 +65,7 @@ const featuredMovies = [
 // Trending movies data
 const trendingMovies = [
   {
-    id: "tt30387552",
+    id: "tt27118357",
     title: "Amaran",
     year: "2024",
     poster:
