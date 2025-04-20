@@ -189,13 +189,13 @@ const Home = () => {
         {/* Navigation Arrows */}
         <button
           onClick={prevFeatured}
-          className="absolute left-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
+          className="absolute  hover:cursor-pointer left-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
         >
           <FiChevronLeft size={24} />
         </button>
         <button
           onClick={nextFeatured}
-          className="absolute right-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
+          className="absolute  hover:cursor-pointer right-4 top-1/2 z-20 -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white p-3 rounded-full transition-all duration-300"
         >
           <FiChevronRight size={24} />
         </button>
